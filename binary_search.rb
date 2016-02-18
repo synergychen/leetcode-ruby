@@ -1,17 +1,13 @@
 def binary_search(nums, target)
-  low = 0
-  high = nums.size - 1
+  low, high = 0, nums.size - 1
 
-  return low if nums[low] == target
-  return high if nums[high] == target
-
-  while low + 1 < high
+  while low <= high
     mid = (low + high) / 2
 
     if nums[mid] < target
-      low = mid
+      low = mid + 1
     elsif nums[mid] > target
-      high = mid
+      high = mid - 1
     else
       return mid
     end
